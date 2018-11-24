@@ -11,7 +11,7 @@ var stun10;
 var myData
 function preload(){
   // put preload code here
-    // myData = loadJSON(‘./assets/oscar.json’);
+    myData = loadJSON('assets/oscar.json');
 }
 
 function setup() {
@@ -19,10 +19,18 @@ function setup() {
   createCanvas(windowWidth,windowHeight);
   background(255);
 
+
 }
 
 function draw() {
   // put drawing code here
+  for( var i=0 ; i< width; i++ ){
+    var dat = myData[i];
+    var yea= dat.Year;
+    var mov = dat.Movie;
+    var name= dat.Name;
+    console.log(name);
+  }
   stun1 = new stun(width/6,height/3,20,100);
   push.stun1;
   stun2 = new stun(width/6+50,height/3,20,100);
@@ -46,7 +54,7 @@ function draw() {
 
 }
 
-function stun(_x,_y,_w,_h,_year,_name) {
+function stun(_x,_y,_w,_h) {
   this.x= _x;
   this.y= _y;
   this.w= _w;
